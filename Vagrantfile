@@ -32,6 +32,9 @@ Vagrant.configure('2') do |config|
     os.sync_method        = 'none'
     os.user_data          = <<-EOS
 #cloud-config
+packages:
+  - tmux
+  - emacs-nox
 system_info:
   default_user:
     name: vagrant
