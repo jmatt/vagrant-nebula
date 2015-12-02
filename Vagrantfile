@@ -29,6 +29,9 @@ Vagrant.configure('2') do |config|
   end
 
   config.vm.provider :openstack do |os,override|
+    os.server_create_timeout = 360
+    os.server_active_timeout = 360
+    os.ssh_timeout = 360
     os.sync_method        = 'none'
     os.user_data          = <<-EOS
 #cloud-config
